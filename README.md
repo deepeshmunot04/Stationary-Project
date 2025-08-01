@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# 🖋️ Stationary Store App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a **React-based Stationary Store application** where users can **register**, **login**, browse **items**, add them to **cart**, proceed to **payment**, and view a printable **receipt**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📂 Project Structure
 
-### `npm start`
+| File/Folder    | Description                                                           |
+| -------------- | --------------------------------------------------------------------- |
+| `App.js`       | Main file that defines routes and manages login/cart state.           |
+| `Login.js`    | Login page for existing users.                                        |
+| `Register.js` | Registration form for new users.                                      |
+| `ItemList.js` | Displays available stationary items with “Add to Cart” functionality. |
+| `Cart.js`     | Shows selected items with quantity, price, and total.                 |
+| `Payment.js`  | Displays total amount and allows user to make payment.                |
+| `Receipt.js`  | Shows a receipt with order ID, item details, total, and print option. |
+| `App.css`      | Centralized styling for all components with responsive design.        |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🔐 Features
 
-### `npm test`
+* **Login/Register**:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  * Register with username and password (stored in `localStorage`).
+  * Login with registered credentials.
 
-### `npm run build`
+* **Item Selection**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * Browse items (e.g., Pen, Pencil, Notebook).
+  * Add multiple items to cart.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* **Cart View**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  * Quantity and unit price tracking.
+  * Shows total cost dynamically.
 
-### `npm run eject`
+* **Payment**:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  * Confirm purchase with “Pay Now” button.
+  * Total is calculated based on cart items.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **Receipt**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  * Shows detailed order summary.
+  * Unique order ID.
+  * “Print Receipt” and “Logout” options.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 💾 Storage & State Management
 
-## Learn More
+* **localStorage**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  * Stores registered username and password.
+* **useState (React)**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  * Manages login status and cart items dynamically.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🧪 Technologies Used
 
-### Analyzing the Bundle Size
+* **Frontend**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  * ReactJS (Hooks: `useState`, `useNavigate`)
+  * JSX for UI Components
+  * CSS3 for styling and responsiveness
 
-### Making a Progressive Web App
+* **Routing**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  * `react-router-dom` for page navigation
 
-### Advanced Configuration
+* **Browser Storage**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  * `localStorage` for simple user data storage
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 👤 Author
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Name:** Deepesh Munot
+* **Email:** [deepeshmunot71@gmail.com](mailto:deepeshmunot71@gmail.com)
+* **GitHub:** [deepeshmunot04](https://github.com/deepeshmunot04)
+* **LinkedIn:** [Deepesh Munot](https://www.linkedin.com/in/deepesh-munot)
