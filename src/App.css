@@ -1,38 +1,479 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  color: #333;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  display: block;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-box {
+  background: linear-gradient(120deg, #8fd3f4 0%, #84fab0 100%);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  text-align: center;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+/*Item CSS*/
+.item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.item-card:last-child {
+  border-bottom: none;
+}
+
+.total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button.secondary {
+  background-color: #007bff;
+}
+
+button.secondary:hover {
+  background-color: #0056b3;
+}
+
+.receipt {
+  text-align: left;
+}
+
+.receipt p {
+  margin: 6px 0;
+}
+
+.cart-container {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.cart-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.cart-count {
+  font-weight: bold;
+  color: #28a745;
+  margin-left: 10px;
+}
+
+.add-to-cart-button {
+  background-color: #ffc107;
+  color: #000;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #e0a800;
+}
+
+.add-to-cart-button.blink {
+  animation: blink-animation 0.5s ease-in-out;
+}
+
+@keyframes blink-animation {
+  0% { background-color: #ffc107; }
+  50% { background-color: #ffeb3b; }
+  100% { background-color: #ffc107; }
+}
+/* Register CSS */
+.register-box {
+  max-width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.register-box h2 {
+  margin-bottom: 20px;
+}
+
+.register-box input {
+  width: 90%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.register-box .button-container {
+  margin-top: 15px;
+}
+
+.register-box button {
+  width: 50%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-box button:hover {
+  background-color: #b88b02;
+}
+
+.register-box p {
+  font-size: 14px;
+}
+/*Cart CSS*/
+.cart-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.cart-table th {
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cart-total {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: right;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.proceed-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.proceed-button:hover {
+  background-color: #fa9f01;
+}
+/*Receipt CSS*/
+.receipt-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.receipt-container h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.receipt-container p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.receipt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.receipt-table th,
+.receipt-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.receipt-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.receipt-total {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 20px 0;
+  text-align: right;
+}
+
+.receipt-buttons button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.receipt-buttons button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.receipt-buttons button:first-child:hover {
+  background-color: #0056b3;
+}
+
+.receipt-buttons button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.receipt-buttons button:last-child:hover {
+  background-color: #c82333;
+}
+@media print {
+  body {
+    -webkit-print-color-adjust: exact; /* Improve color rendering */
+    print-color-adjust: exact;
   }
-  to {
-    transform: rotate(360deg);
+
+  .receipt-container {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .receipt-container h2,
+  .receipt-container p,
+  .receipt-table th,
+  .receipt-table td,
+  .receipt-total {
+    color: #000; /* Force black text */
+  }
+
+  .receipt-buttons {
+    display: none; /* Hide buttons in print */
+  }
+
+  .receipt-table th {
+  background-color: #007bff;
+  color: white;
+  }
+}
+/*Payment CSS*/
+.payment-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 25px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.payment-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.payment-container p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.pay-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pay-button:hover {
+  background-color: #218838;
+}
+/* RESPONSIVE DESIGN */
+
+/* For small screens (phones) */
+@media (max-width: 600px) {
+  .container,
+  .register-box,
+  .login-box,
+  .cart-container,
+  .receipt-container,
+  .payment-container {
+    width: 80%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  input,
+  button {
+    width: 100% !important;
+    font-size: 14px;
+  }
+
+  .register-box button {
+    width: 100%;
+  }
+
+  .cart-table th,
+  .cart-table td,
+  .receipt-table th,
+  .receipt-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .proceed-button,
+  .pay-button,
+  .receipt-buttons button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .payment-container p,
+  .receipt-container p {
+    font-size: 16px;
+  }
+}
+
+/* For tablets (medium screens) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container,
+  .register-box,
+  .login-box,
+  .cart-container,
+  .receipt-container,
+  .payment-container {
+    width: 80%;
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  input,
+  button {
+    font-size: 15px;
+  }
+
+  .cart-table th,
+  .cart-table td,
+  .receipt-table th,
+  .receipt-table td {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 24px;
   }
 }
